@@ -1,0 +1,2 @@
+docs/cljs-out/*
+!docs/cljs-out/app.js

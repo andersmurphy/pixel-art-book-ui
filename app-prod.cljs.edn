@@ -1,0 +1,6 @@
+{:main transmute.app
+ :output-to "docs/cljs-out/app.js"
+ :output-dir "docs/cljs-out"
+ :externs ["preact/preact-externs.js"]
+ :foreign-libs [{:file "preact/preact.min.js"
+                 :provides ["preact"]}]}

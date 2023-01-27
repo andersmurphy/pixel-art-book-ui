@@ -1,0 +1,185 @@
+/* Reset */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: black;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  /* margin: 0; */
+  /* padding: 0; */
+  font-weight: normal;
+}
+ol, ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+button {
+  border: none;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+/* Styles */
+:root {
+  --pixel-size: 4;
+  --sprites1: url(imgs/book-sprites1.png);
+  --sprites2: url(imgs/book-sprites2.png);
+  --sprites1-width: 48px;
+  --sprites2-width: 32px;
+  --ink: rgb(113, 77, 52);
+  --paper: rgb(227, 200, 152);
+  --paper-highlight: rgb(240, 226, 176);
+  --paper-shadow: rgb(215, 163, 118);
+}
+
+body {  
+  font-family: 'Press Start 2P', cursive;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: calc(var(--pixel-size) * 16px)
+                         calc(var(--pixel-size) * 8px)
+                         1fr
+                         calc(var(--pixel-size) * 8px)
+                         calc(var(--pixel-size) * 16px);
+  grid-template-rows: calc(var(--pixel-size) * 16px)
+                      1fr
+                      calc(var(--pixel-size) * 16px);
+}
+
+.book-content {
+  grid-column: 2 / 5;
+  grid-row: 2;
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+.book-top-left {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  background-image: var(--sprites1);
+  background-position: 0px calc(var(--pixel-size) * -16px);
+  background-size: calc(var(--pixel-size) * var(--sprites1-width));
+  image-rendering: pixelated;
+}
+
+.book-top-middle {
+  grid-column: 3;
+  grid-row: 1;
+  background-image: var(--sprites1);
+  background-size: calc(var(--pixel-size) * var(--sprites1-width));  
+  image-rendering: pixelated;
+}
+
+.book-top-right {
+  grid-column: 4 / 6;
+  grid-row: 1;
+  background-image: var(--sprites1);
+  background-position: calc(var(--pixel-size) * -24px)
+                       calc(var(--pixel-size) * -16px);
+  background-size: calc(var(--pixel-size) * var(--sprites1-width));
+  image-rendering: pixelated;
+}
+
+.book-bottom-left {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  background-image: var(--sprites1);
+  background-position: 0px calc(var(--pixel-size) * -32px);
+  background-size: calc(var(--pixel-size) * var(--sprites1-width));
+  image-rendering: pixelated;
+}
+
+.book-bottom-middle {
+  grid-column: 3;
+  grid-row: 3;
+  background-image: var(--sprites1);
+  background-position: 0px calc(var(--pixel-size) * -48px);
+  background-size: calc(var(--pixel-size) * var(--sprites1-width));
+  image-rendering: pixelated;
+}
+
+.book-bottom-right {
+  grid-column: 4 / 6;
+  grid-row: 3;
+  background-image: var(--sprites1);
+  background-position: calc(var(--pixel-size) * -24px)
+                       calc(var(--pixel-size) * -32px);
+  background-size: calc(var(--pixel-size) * var(--sprites1-width));
+  image-rendering: pixelated;
+}
+
+.book-left {
+  grid-column: 1;
+  grid-row: 2;
+  background-image: var(--sprites2);
+  background-position: calc(var(--pixel-size) * -16px) 0px;
+  background-size: calc(var(--pixel-size) * var(--sprites2-width));
+  image-rendering: pixelated;
+}
+
+.book-right {
+  grid-column: 5;
+  grid-row: 2;
+  background-image: var(--sprites2);
+  background-size: calc(var(--pixel-size) * var(--sprites2-width));
+  image-rendering: pixelated;
+  display: flex;
+  justify-content: left;
+  align-items: start;
+  flex-direction: column;
+  row-gap: 5%;
+}
+
+.book-tab {
+  margin-left: calc(var(--pixel-size) * 10px);
+  width: calc(var(--pixel-size) * 8px);
+  height: 10%;
+  background: var(--paper);
+  border-top: calc(var(--pixel-size) * 1px)
+              solid var(--paper-highlight);
+  border-right: calc(var(--pixel-size) * 1px)
+                solid var(--paper-highlight);
+  border-bottom: calc(var(--pixel-size) * 1px)
+                 solid var(--paper-shadow);
+}
+
+.book-tab-selected {
+  margin-left: calc(var(--pixel-size) * 7px);
+  width: calc(var(--pixel-size) * 11px);
+  height: 10%;
+  background: var(--paper);
+  border-top: calc(var(--pixel-size) * 1px)
+              solid var(--paper-highlight);
+  border-right: calc(var(--pixel-size) * 1px)
+                solid var(--paper-highlight);
+  border-bottom: calc(var(--pixel-size) * 1px)
+                 solid var(--paper-shadow);
+}
+
