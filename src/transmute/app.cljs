@@ -12,6 +12,7 @@
       (h "div" #js {:class "book-content"}
          (h "h2" nil "Dungeon Diagrams")
          (h "p" nil "On the design of Dungeons."))
+      (h "div" #js {:class "book-left-marker"})
       (h "div" #js {:class "book-left"})
       (h "div" #js {:class "book-right"}
          (h "div" #js {:class "book-tab"})
@@ -28,4 +29,11 @@
     (js/preact.render (game full-state) container)))
 
 (renderer nil)
+
+;; TODO: fix tab overflow
+;; TODO: change page tapping on tab
+;; TODO: rotate 3D book cover
+;; TODO: page turn sound
+;; TODO: page transition?
+;; TODO: tab icons (with animations)
 
