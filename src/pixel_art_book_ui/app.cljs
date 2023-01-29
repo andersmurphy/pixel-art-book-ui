@@ -1,4 +1,4 @@
-(ns transmute.app
+(ns pixel-art-book-ui.app
   (:require [preact]))
 
 (def h js/preact.h)

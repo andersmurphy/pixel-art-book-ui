@@ -15,6 +15,6 @@ clj -M:prod
 
 Pushed changes will deploy automatically to:
 
-https://andersmurphy.github.io/transmute/
+https://andersmurphy.github.io/pixel-art-book-ui/
 
 

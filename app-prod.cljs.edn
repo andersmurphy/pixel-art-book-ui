@@ -1,4 +1,4 @@
-{:main transmute.app
+{:main pixel-art-book-ui.app
  :output-to "docs/cljs-out/app.js"
  :output-dir "docs/cljs-out"
  :externs ["preact/preact-externs.js"]
